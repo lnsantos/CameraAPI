@@ -77,6 +77,7 @@ object MediaUtils {
         // Save last file directory of user
         context.getSharedPreferences(PREFERENCE_MEDIA,Context.MODE_PRIVATE)
             .edit().putString(baseConfigMedia.preferenceKey,path).apply()
+        // The android scanner system file, adding it new media on gallery
         context.sendBroadcast(Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE).apply {
              Uri.parse(path)
         })
@@ -87,11 +88,13 @@ object MediaUtils {
             .getString(mediaType.preferenceKey, null)
     }
 
+    // recover last media taken
     fun loadImage(file: File,width: Int,height: Int): Bitmap?{
 
         if(width ==0 || height == 0) return null
 
         val bitmapOptions = BitmapFactory.Options()
+        // Only image size will be loaded into memory
         bitmapOptions.inJustDecodeBounds = true
 
         BitmapFactory.decodeFile(file.absolutePath, bitmapOptions)
