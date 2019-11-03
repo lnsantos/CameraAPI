@@ -2,6 +2,7 @@
 ext{
     globalKotlinDependencyVersion = "1.1.0"
     globalAndroidXVersion = "1.0.0"
+    globalCorotinesVersion = "1.1.0"
 }
 buildscript {
     ext.kotlin_version = '1.3.50'
