@@ -115,5 +115,4 @@ object MediaUtils {
             FileProvider.getUriForFile(context, PROVIDER_AUTHORITY, newVideoFile)
         else Uri.fromFile(newVideoFile)
     }
-
 }
