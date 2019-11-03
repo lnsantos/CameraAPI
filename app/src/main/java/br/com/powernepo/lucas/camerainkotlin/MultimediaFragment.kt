@@ -41,9 +41,15 @@ abstract class MultimediaFragment : Fragment() , CoroutineScope{
         }
     }
 
-    protected fun requestPermission(requestCode: Int = PermissionUtils.REQUEST_CODE_PERMISSION){
+     fun requestPermission(requestCode: Int = PermissionUtils.REQUEST_CODE_PERMISSION){
         requestPermissions(arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),PermissionUtils.REQUEST_CODE_PERMISSION)
     }
+
+    private fun loadImageInImageView(){
+
+    }
+
+
 
 
 
